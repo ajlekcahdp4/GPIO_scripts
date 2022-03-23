@@ -3,7 +3,7 @@ import dec2bin as d2b
 import time
 
 def PrintVolt (val):
-    volt = 3.3 * (val / 255)
+    volt = 3.3 * (val / 256)
     print ("{:.3f} V".format(volt))
 #========================================================================
 def isfloat (val_str):
@@ -16,6 +16,9 @@ def isfloat (val_str):
 #========================================================================
 def InputCheck (val_str):
     if val_str.isdigit():
+        if int(val_str) > 255:
+            print ("ERROR: 45Was entered the number greater then 255\n")
+            return 0
         return 1
     elif isfloat(val_str):
         val_float = float (val_str)

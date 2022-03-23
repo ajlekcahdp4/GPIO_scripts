@@ -7,7 +7,9 @@ def isfloat (val_str):
 
 
 
-def InputCheck (val_str):
+
+
+def IntInputCheck (val_str):
     if val_str.isdigit():
         if int(val_str) > 255:
             print ("ERROR: 45Was entered the number greater then 255\n")
@@ -22,4 +24,10 @@ def InputCheck (val_str):
         return 0
     elif val_str != "q":
         print ("ERROR: Not a number was entered\n")
+        return 0
+
+def FloatInputCheck (val_str):
+    if isfloat (val_str) == False:
+	if val_str != "q":	
+    print ("ERROR: Not a number was entered\n")
         return 0

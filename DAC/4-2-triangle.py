@@ -13,7 +13,7 @@ GPIO.setup(dac, GPIO.OUT)
 
 try:
     period_str = input ("Please, enter the period\n")
-    res = IC.InputCheck(period_str)
+    res = IC.IntInputCheck(period_str)
     if res:
         period = int (period_str)
         val = 0

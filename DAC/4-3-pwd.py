@@ -15,7 +15,7 @@ p.start (0)
 try:
     while True:
         coef_str = input ("Please, enter the coefficiant of duty cycle\n")
-        res = IC.InputCheck(coef_str)
+        res = IC.IntInputCheck(coef_str)
         if res:
             coef = int (coef_str)
             p.ChangeDutyCycle(coef)

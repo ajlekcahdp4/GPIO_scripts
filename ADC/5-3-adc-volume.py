@@ -42,8 +42,13 @@ try:
     while True:
         value = adc ()
         signal = d2b.dec2bin(value)
-        
-        GPIO.output(leds, signal)
+        out = value / 256 * 8
+        out = round(out)
+        print (str(out))
+        output = [0] * 8
+        for i in range (out):
+            output[-i-1] = 1
+        GPIO.output (leds, output)
 finally:
     GPIO.output (dac, 0)
     GPIO.output (leds, 0)
